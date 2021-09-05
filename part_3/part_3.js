@@ -9,10 +9,19 @@ return 'NO' if the parentheses in the input string are not balanced,.
 
 */
 
-console.log('PART 4');
+// WRITE YOUR CODE BELOW THIS LINE
 
-const isABalancedString = () => {
-  // WRITE YOUR CODE BELOW THIS LINE
+const isABalancedString = (str) => {
+  // اذا اول عنصر )
+  ///  اول اخر واحد )
+  // يعطي نو
+  // بس هيك بضل اعمل لبنص فش وقت افكر
+  theEnd = str.length();
+  if (str[0] == "(" || str[0] == ")" || theEnd == "(" || theEnd == ")") {
+    return "YES";
+  } else {
+    return "NO";
+  }
 };
 
 /*
