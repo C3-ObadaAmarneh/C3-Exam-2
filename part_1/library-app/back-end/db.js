@@ -15,4 +15,4 @@ mongoose.connect("mongodb://localhost:27017/exam" , options).then(()=>{
     console.log(err);
 })
 
-module.exports = {books}
+module.exports = books

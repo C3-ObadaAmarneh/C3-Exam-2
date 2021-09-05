@@ -1,10 +1,11 @@
 const express = require("express");
 const {
-    newbook
+    newBook , 
+    getBooks,
 } = require("../controllers/book")
 
 const bookRouter = express.Router();
 
-bookRouter.post("/" , newbook);
-
+bookRouter.post("/" , newBook);
+bookRouter.get("/" , getBooks )
 module.exports = bookRouter;

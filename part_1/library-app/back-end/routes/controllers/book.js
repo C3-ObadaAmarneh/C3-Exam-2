@@ -1,4 +1,5 @@
-books = require("../../db")
+const  books  = require("../../db")
+
 const newBook = () =>{
 
 const  {title , author, pages, publisher, published_at} = req.body
@@ -13,6 +14,7 @@ published_at:  published_at
 
 NewbookCreate.save
 .then((result) =>{
+    books.push(NewbookCreate)
     res.status(201)
     res.json(result) 
 }).cath((err)=>{
@@ -22,4 +24,9 @@ NewbookCreate.save
 
 } 
 
-module.exports = {newBook}
+const getBooks = ()=> {
+    res.status(200)
+    res.json(books)
+}
+
+module.exports = {newBook , getBooks}
