@@ -1,4 +1,10 @@
 const express = require("express");
-const bookRouter = express.Router()
+const {
+    newbook
+} = require("../controllers/book")
 
-bookRouter.post("/")
+const bookRouter = express.Router();
+
+bookRouter.post("/" , newbook);
+
+module.exports = bookRouter;

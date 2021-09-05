@@ -1,5 +1,6 @@
-// db
 const mongoose = require("mongoose")
+
+const books = []
 
 const options = {
     /// ضل يعطيني غلط مش عارفوا 
@@ -13,3 +14,5 @@ mongoose.connect("mongodb://localhost:27017/exam" , options).then(()=>{
 },(err)=>{
     console.log(err);
 })
+
+module.exports = {books}
