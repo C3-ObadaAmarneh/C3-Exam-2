@@ -29,7 +29,7 @@ const getBooks = ()=> {
     res.json(books)
 }
 
-const specificBook = () => {
+const specificBookget = () => {
     const book_id = req.params.book_id
    const foundspecBook =  books.filter((elem,i)=>{
         return elem._id === book_id
@@ -43,4 +43,22 @@ if(foundspecBook) {
 }
 }
 
-module.exports = {newBook , getBooks , specificBook } 
+const specificBookdelete = () => {
+    const book_id = req.params.book_id
+    let index = 0
+   const foundspecBook =  books.filter((elem,i)=>{
+    let index = i  
+    return elem._id === book_id
+    })
+if(foundspecBook) {
+    books.splice(index,1) 
+    res.status(200)
+    res.json(foundspecBook)
+}else{
+    res.status(404)
+    res.json("error")    
+}
+}
+
+
+module.exports = {newBook , getBooks , specificBookget , specificBookdelete } 
