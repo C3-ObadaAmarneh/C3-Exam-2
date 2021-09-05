@@ -29,4 +29,18 @@ const getBooks = ()=> {
     res.json(books)
 }
 
-module.exports = {newBook , getBooks}
+const specificBook = () => {
+    const book_id = req.params.book_id
+   const foundspecBook =  books.filter((elem,i)=>{
+        return elem._id === book_id
+    })
+if(foundspecBook) {
+    res.status(200)
+    res.json(foundspecBook)
+}else{
+    res.status(404)
+    res.json("error")    
+}
+}
+
+module.exports = {newBook , getBooks , specificBook } 
